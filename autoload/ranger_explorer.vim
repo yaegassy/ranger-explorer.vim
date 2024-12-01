@@ -126,7 +126,7 @@ function! s:open_file() abort
 
   if filereadable(s:path_file)
     for path in readfile(s:path_file)
-      exec cmd . path
+      exec cmd . fnameescape(path)
     endfor
     call delete(s:path_file)
   endif
